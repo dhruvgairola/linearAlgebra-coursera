@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e02659dd-5c3c-4fac-98dc-5e7a66062e32" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assignment 2/hw2/GF2.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assignment 2/hw2/vec.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assignment 3/hw3/hw3.pdf" afterPath="$PROJECT_DIR$/assignment 3/hw3/hw3.pdf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assignment 3/ecc_lab/ecc_lab.py" afterPath="$PROJECT_DIR$/assignment 3/ecc_lab/ecc_lab.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assignment 2/hw2/hw2.py" afterPath="$PROJECT_DIR$/assignment 2/hw2/hw2.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assignment 3/hw3/hw3.py" afterPath="$PROJECT_DIR$/assignment 3/hw3/hw3.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assignment 3/mat/mat.py" afterPath="$PROJECT_DIR$/assignment 3/mat/mat.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assignment 3/hw3/submit_hw3.py" afterPath="$PROJECT_DIR$/assignment 3/hw3/submit_hw3.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/geometry_lab/geometry_lab.py" afterPath="$PROJECT_DIR$/geometry_lab/geometry_lab.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hw4/hw4.py" afterPath="$PROJECT_DIR$/hw4/hw4.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="matrix.iws" />
@@ -27,11 +20,13 @@
     <file path="/politics_lab.py" changelist="e02659dd-5c3c-4fac-98dc-5e7a66062e32" time="1375039530986" ignored="false" />
     <file path="/politics_lab_test.py" changelist="e02659dd-5c3c-4fac-98dc-5e7a66062e32" time="1375038592114" ignored="false" />
     <file path="/voting_record_dump109.txt" changelist="e02659dd-5c3c-4fac-98dc-5e7a66062e32" time="1375036272800" ignored="false" />
-    <file path="/Dummy.txt" changelist="e02659dd-5c3c-4fac-98dc-5e7a66062e32" time="1376215151862" ignored="false" />
+    <file path="/Dummy.txt" changelist="e02659dd-5c3c-4fac-98dc-5e7a66062e32" time="1376814857654" ignored="false" />
     <file path="/hw2.py" changelist="e02659dd-5c3c-4fac-98dc-5e7a66062e32" time="1375619678331" ignored="false" />
     <file path="/hw3.py" changelist="e02659dd-5c3c-4fac-98dc-5e7a66062e32" time="1376342936801" ignored="false" />
     <file path="/mat.py" changelist="e02659dd-5c3c-4fac-98dc-5e7a66062e32" time="1376338596946" ignored="false" />
-    <file path="/ecc_lab.py" changelist="e02659dd-5c3c-4fac-98dc-5e7a66062e32" time="1376351521983" ignored="false" />
+    <file path="/ecc_lab.py" changelist="e02659dd-5c3c-4fac-98dc-5e7a66062e32" time="1376464018334" ignored="false" />
+    <file path="/geometry_lab.py" changelist="e02659dd-5c3c-4fac-98dc-5e7a66062e32" time="1376831447632" ignored="false" />
+    <file path="/hw4.py" changelist="e02659dd-5c3c-4fac-98dc-5e7a66062e32" time="1376917760552" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,21 +48,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ecc_lab.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/assignment 3/ecc_lab/ecc_lab.py">
+      <file leaf-file-name="hw4.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/hw4/hw4.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="94" column="8" selection-start="32813" selection-end="32813" vertical-scroll-proportion="0.53958">
+            <state line="334" column="7" selection-start="8191" selection-end="9824" vertical-scroll-proportion="0.9273021">
               <folding>
-                <element signature="e#0#19#0" expanded="true" />
+                <element signature="e#100#119#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mat.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assignment 3/ecc_lab/mat.py">
+      <file leaf-file-name="geometry_lab.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/geometry_lab/geometry_lab.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="89" column="35" selection-start="2057" selection-end="2068" vertical-scroll-proportion="0.0">
+            <state line="1" column="0" selection-start="20" selection-end="31" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -91,8 +86,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/python_lab/ans_python_lab.py" />
-        <option value="$PROJECT_DIR$/inverse_index_lab/dictutil.py" />
         <option value="$PROJECT_DIR$/inverse_index_lab/inverse_index_lab.py" />
         <option value="$PROJECT_DIR$/hw0/hw0.py" />
         <option value="$PROJECT_DIR$/assignment 1/hw1/ans_hw1.py" />
@@ -107,6 +100,8 @@
         <option value="$PROJECT_DIR$/assignment 3/mat/mat.py" />
         <option value="$PROJECT_DIR$/assignment 3/hw3/hw3.py" />
         <option value="$PROJECT_DIR$/assignment 3/ecc_lab/ecc_lab.py" />
+        <option value="$PROJECT_DIR$/geometry_lab/geometry_lab.py" />
+        <option value="$PROJECT_DIR$/hw4/hw4.py" />
       </list>
     </option>
   </component>
@@ -184,93 +179,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="assignment 3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="matrix" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="matrix" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assignment 3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ecc_lab" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="matrix" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="matrix" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assignment 2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hw2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="matrix" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="matrix" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assignment 1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vec" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="matrix" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="matrix" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assignment 1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="matrix" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="matrix" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assignment 1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hw1" />
+              <option name="myItemId" value="hw4" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -493,14 +402,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="55" y="22" width="1225" height="778" extended-state="6" />
+    <frame x="55" y="22" width="1225" height="778" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32866043" sideWeight="0.6713396" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24792013" sideWeight="0.6713396" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24792013" sideWeight="0.9578005" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39875388" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -573,126 +482,100 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/matutil.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="41" selection-start="491" selection-end="491" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assignment 3/hw3/vecutil.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="12" selection-start="299" selection-end="307" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assignment 3/hw3/submit_hw3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="243" column="38" selection-start="28131" selection-end="28131" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assignment 1/vec/vec.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="254" selection-end="254" vertical-scroll-proportion="0.27684563">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assignment 2/hw2/vecutil.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assignment 2/hw2/hw2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="119" column="0" selection-start="2694" selection-end="2694" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#100#119#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assignment 3/hw3/vec.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="332" selection-end="488" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assignment 3/hw3/test_mat.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="4" selection-start="2027" selection-end="2027" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1374455800000" expanded="false" signature="-1:-1" placeholder="import ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assignment 3/mat/test_mat.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="120" column="28" selection-start="3145" selection-end="3145" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1374455800000" expanded="true" signature="-1:-1" placeholder="import ..." />
-          </folding>
-        </state>
+        <state line="120" column="28" selection-start="3145" selection-end="3145" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assignment 3/mat/mat.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="170" column="0" selection-start="4760" selection-end="4760" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="170" column="0" selection-start="4760" selection-end="4760" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assignment 3/hw3/matutil.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="13" selection-start="1455" selection-end="1455" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
+        <state line="40" column="13" selection-start="1455" selection-end="1455" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assignment 3/hw3/mat.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="27" selection-start="2110" selection-end="2350" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="91" column="27" selection-start="2110" selection-end="2350" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assignment 3/hw3/hw3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="293" column="0" selection-start="6978" selection-end="6978" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#100#119#0" expanded="true" />
-          </folding>
-        </state>
+        <state line="293" column="0" selection-start="6978" selection-end="6978" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assignment 3/ecc_lab/GF2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="8" selection-start="8" selection-end="8" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assignment 3/ecc_lab/mat.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="89" column="35" selection-start="2057" selection-end="2068" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="8" selection-start="8" selection-end="8" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assignment 3/ecc_lab/ecc_lab.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="94" column="8" selection-start="32813" selection-end="32813" vertical-scroll-proportion="0.53958">
+        <state line="30" column="7" selection-start="1510" selection-end="1510" vertical-scroll-proportion="0.726979" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assignment 3/ecc_lab/mat.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="89" column="35" selection-start="2057" selection-end="2068" vertical-scroll-proportion="0.024232633" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/geometry_lab/cit.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/geometry_lab/mat.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-2.6833603">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/geometry_lab/image.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="19" selection-start="1596" selection-end="1596" vertical-scroll-proportion="0.49841774">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/geometry_lab/vec.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.8239095">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assignment 0/hw0/hw0.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="12" selection-start="177" selection-end="177" vertical-scroll-proportion="0.28481013">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/geometry_lab/image_mat_util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="12" selection-start="837" selection-end="845" vertical-scroll-proportion="0.31502423">
           <folding>
-            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#736#746#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/geometry_lab/geometry_lab.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="20" selection-end="31" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw4/hw4.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="334" column="7" selection-start="8191" selection-end="9824" vertical-scroll-proportion="0.9273021">
+          <folding>
+            <element signature="e#100#119#0" expanded="true" />
           </folding>
         </state>
       </provider>
