@@ -306,35 +306,35 @@ def exchange(S, A, z):
     return None
 
 
-    # import hw4
-    # from vec import Vec
-    # import vecutil
-    #
-    # a0 = Vec({'a','b','c','d'}, {'a':1})
-    # a1 = Vec({'a','b','c','d'}, {'b':1})
-    # a2 = Vec({'a','b','c','d'}, {'c':1})
-    # hw4.rep2vec(Vec({0,1,2}, {0:2, 1:4, 2:6}), [a0,a1,a2]) == Vec({'a', 'c', 'b', 'd'},{'a': 2, 'c': 6, 'b': 4, 'd': 0})
-    # hw4.vec2rep([a0,a1,a2], Vec({'a','b','c','d'}, {'a':3, 'c':-2})) == Vec({0, 1, 2},{0: 3.0, 1: 0.0, 2: -2.0})
-    # a3 = Vec({'a','b','c','d'}, {'a':1,'c':3})
-    # L = [a0, a1, a2, a3]
-    # hw4.is_superfluous([a0,a1,a2,a3], 3)
-    # hw4.is_superfluous([a0,a1,a2,a3], 0)
-    # hw4.is_superfluous([a0,a1,a2,a3], 1)
-    # vlist = [Vec({0, 1, 2},{0: 1, 1: 0, 2: 0}), Vec({0, 1, 2},{0: 0, 1: 1, 2: 0}), Vec({0, 1, 2},{0: 0, 1: 0, 2: 1}), Vec({0, 1, 2},{0: 1, 1: 1, 2: 1}), Vec({0, 1, 2},{0: 0, 1: 1, 2: 1}), Vec({0, 1, 2},{0: 1, 1: 1, 2: 0})]
-    # hw4.is_independent(vlist)
-    # hw4.is_independent(vlist[:3])
-    # hw4.is_independent(vlist[:2])
-    # hw4.is_independent(vlist[1:4])
-    # hw4.is_independent(vlist[2:5])
-    # hw4.is_independent(vlist[2:6])
-    # hw4.is_independent(vlist[1:3])
-    # hw4.is_independent(vlist[5:])
-    # hw4.superset_basis([a0, a3], [a0, a1, a2]) == [Vec({'a', 'c', 'b', 'd'},{'a': 1}), Vec({'a', 'c', 'b', 'd'},{'b':1}),Vec({'a', 'c', 'b', 'd'},{'c': 1})]
-    # S = [vecutil.list2vec(v) for v in [[0,0,5,3],[2,0,1,3],[0,0,1,0],[1,2,3,4]]]
-    # A = [vecutil.list2vec(v) for v in [[0,0,5,3],[2,0,1,3]]]
-    # z = vecutil.list2vec([0,2,1,1])
-    # hw4.exchange(S, A, z) == Vec({0, 1, 2, 3},{0: 0, 1: 0, 2: 1, 3: 0})
-    # S = [vecutil.list2vec(v) for v in [[0,0,4,9],[7,0,5,3],[0,3,4,5],[0,1,2,0]]]
-    # A = [vecutil.list2vec(v) for v in [[0,0,4,9],[0,3,4,5],]]
-    # z = vecutil.list2vec([1,0,0,0])
-    # (hw4.exchange(S, A, z) == vecutil.list2vec([7,0,5,3])) or (hw4.exchange(S, A, z) == vecutil.list2vec([0,1,2,0]))
+# import hw4
+# from vec import Vec
+# import vecutil
+#
+# a0 = Vec({'a','b','c','d'}, {'a':1})
+# a1 = Vec({'a','b','c','d'}, {'b':1})
+# a2 = Vec({'a','b','c','d'}, {'c':1})
+# hw4.rep2vec(Vec({0,1,2}, {0:2, 1:4, 2:6}), [a0,a1,a2]) == Vec({'a', 'c', 'b', 'd'},{'a': 2, 'c': 6, 'b': 4, 'd': 0})
+# hw4.vec2rep([a0,a1,a2], Vec({'a','b','c','d'}, {'a':3, 'c':-2})) == Vec({0, 1, 2},{0: 3.0, 1: 0.0, 2: -2.0})
+# a3 = Vec({'a','b','c','d'}, {'a':1,'c':3})
+# L = [a0, a1, a2, a3]
+# hw4.is_superfluous([a0,a1,a2,a3], 3)
+# hw4.is_superfluous([a0,a1,a2,a3], 0)
+# hw4.is_superfluous([a0,a1,a2,a3], 1)
+# vlist = [Vec({0, 1, 2},{0: 1, 1: 0, 2: 0}), Vec({0, 1, 2},{0: 0, 1: 1, 2: 0}), Vec({0, 1, 2},{0: 0, 1: 0, 2: 1}), Vec({0, 1, 2},{0: 1, 1: 1, 2: 1}), Vec({0, 1, 2},{0: 0, 1: 1, 2: 1}), Vec({0, 1, 2},{0: 1, 1: 1, 2: 0})]
+# hw4.is_independent(vlist)
+# hw4.is_independent(vlist[:3])
+# hw4.is_independent(vlist[:2])
+# hw4.is_independent(vlist[1:4])
+# hw4.is_independent(vlist[2:5])
+# hw4.is_independent(vlist[2:6])
+# hw4.is_independent(vlist[1:3])
+# hw4.is_independent(vlist[5:])
+# hw4.superset_basis([a0, a3], [a0, a1, a2]) == [Vec({'a', 'c', 'b', 'd'},{'a': 1}), Vec({'a', 'c', 'b', 'd'},{'b':1}),Vec({'a', 'c', 'b', 'd'},{'c': 1})]
+# S = [vecutil.list2vec(v) for v in [[0,0,5,3],[2,0,1,3],[0,0,1,0],[1,2,3,4]]]
+# A = [vecutil.list2vec(v) for v in [[0,0,5,3],[2,0,1,3]]]
+# z = vecutil.list2vec([0,2,1,1])
+# hw4.exchange(S, A, z) == Vec({0, 1, 2, 3},{0: 0, 1: 0, 2: 1, 3: 0})
+# S = [vecutil.list2vec(v) for v in [[0,0,4,9],[7,0,5,3],[0,3,4,5],[0,1,2,0]]]
+# A = [vecutil.list2vec(v) for v in [[0,0,4,9],[0,3,4,5],]]
+# z = vecutil.list2vec([1,0,0,0])
+# (hw4.exchange(S, A, z) == vecutil.list2vec([7,0,5,3])) or (hw4.exchange(S, A, z) == vecutil.list2vec([0,1,2,0]))
