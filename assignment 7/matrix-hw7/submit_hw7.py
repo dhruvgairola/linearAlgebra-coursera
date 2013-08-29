@@ -1,0 +1,273 @@
+# version code 1049
+########                                     ######## 
+# Hi there, curious student.                        #
+#                                                   #
+# This submission script runs some tests on your    #
+# code and then uploads it to Coursera for grading. #
+#                                                   #
+# Changing anything in this script might cause your #
+# submissions to fail.                              #
+########                                     ########
+
+import io, os, sys, doctest, traceback, importlib, urllib.request, urllib.parse, urllib.error, base64, hashlib, random, ast
+
+SUBMIT_VERSION      = "1049"
+URL                 = 'matrix-001'
+part_friendly_names = ['Basis Function', 'Subset Basis', 'Orthogonal vec2rep', 'Orthogonal change of basis', 'Orthonormal project-orthogonal', 'Orthonormalize(L)', 'aug_orthonormalize(L)', 'Least Squares Problem', 'QR Solve']
+groups              = [[('MaSN9MykLA2DGNoSprKf77yZkQfCjNjh', 'Basis Function', '>>> from vecutil import *\n>>> vlist =[list2vec(x) for x in [[2, 4, 3, 5, 0], [4, -2, -5, 4, 0], [-8, 14, 21, -2, 0], [-1, -4,-4, 0, 0], [-2, -18, -19, -6, 0], [5, -3, 1, -5, 2]]]\n>>> print(test_format(basis(vlist)))\n>>> vlist = [list2vec(x) for x in [[1,2,3], [2,4,6], [9,1,7], [-2, -4, 5]]]\n>>> print(test_format(basis(vlist)))\n>>> vlist = [list2vec(x) for x in [[3, 17, 21], [29, 16, 8], [16, 1, 30]]]\n>>> print(test_format(basis(vlist)))\n')], [('MaSN9MykLA2DGNoS74CF90AgCuncUw8L', 'Subset Basis', '>>> from vec import Vec\n>>> from vecutil import *\n>>> vlist = [list2vec(x) for x in [[2, 4, 3, 5, 0], [4, -2, -5, 4, 0], [-8, 14, 21, -2, 0], [-1, -4,-4, 0, 0], [-2, -18, -19, -6, 0], [5, -3, 1, -5, 2]]]\n>>> print(test_format(subset_basis(vlist)))\n>>> vlist =  [list2vec(x) for x in [[0,0,0,0],[1,1,1,1],[2,2,2,2],[1,2,1,1],[2,1,2,2]]]\n>>> print(test_format(subset_basis(vlist)))\n>>> vlist = [Vec({0, 1, 2, 3, 4, 5},{0: 79, 1: 24, 2: 73, 3: 65, 4: 88, 5: 17}), Vec({0, 1, 2, 3, 4, 5},{0: 71, 1: 65, 2: 16, 3: 19, 4: 11, 5: 60}), Vec({0, 1, 2, 3, 4, 5},{0: 98, 1: 31, 2: 58, 3: 21, 4: 49, 5: 40}), Vec({0, 1, 2, 3, 4, 5},{0: 71, 1: 64, 2: 60, 3: 12, 4: 73, 5: 83}), Vec({0, 1, 2, 3, 4, 5},{0: 92, 1: 52, 2: 24, 3: 43, 4: 40, 5: 99})]\n>>> print(test_format(subset_basis(vlist)))\n')], [('MaSN9MykLA2DGNoSlvXj9fnyIezawKj6', 'Orthogonal vec2rep', '>>> from mat import Mat\n>>> from vec import Vec\n>>> A1 = Mat(({0, 1, 2, 3}, {0, 1, 2, 3}), {(0, 1): 0, (1, 2): 0.0, (3, 2): 0.0, (0, 0): 5, (3, 3): 14.0, (3, 0): 0.0, (3, 1): 0.0, (1, 1): 2.0, (2, 1): 0.0, (0, 2): 0, (2, 0): 0.0, (1, 3): 0.0, (2, 3): 0.0, (2, 2): 9.0, (1, 0): 0.0, (0, 3): 0})\n>>> a1 = Vec({0, 1, 2, 3},{0: 12, 1: 9, 2: 6, 3: 3})\n>>> A2 = Mat(({0, 1, 2, 3}, {0, 1, 2, 3}), {(0, 1): 0, (1, 2): 0, (3, 2): 0, (0, 0): 0, (3, 3): 0, (3, 0): 5, (3, 1): 0, (1, 1): 2, (2, 1): 0, (0, 2): 0, (2, 0): 0, (1, 3): 0, (2, 3): 0, (2, 2): 6, (1, 0): 0, (0, 3): 9})\n>>> a2 = Vec({0, 1, 2, 3},{0: -19, 1: 0, 2: 5, 3: -3})\n>>> A3 = Mat(({0, 1, 2, 3}, {0, 1, 2, 3}), {(0, 1): 0, (1, 2): 0, (3, 2): -17, (0, 0): -1, (3, 3): 0, (3, 0): 0, (3, 1): 0, (1, 1): 0, (2, 1): -12, (0, 2): 0, (2, 0): 0, (1, 3): -3, (2, 3): 0, (2, 2): 0, (1, 0): 0, (0, 3): 0})\n>>> a3 = Vec({0, 1, 2, 3},{0: 1, 1: 1, 2: 1, 3: 1})\n>>> A4 = Mat(({0, 1}, {0, 1}), {(0, 1): 2.0, (1, 0): -2, (0, 0): 2, (1, 1): 2.0})\n>>> a4 = Vec({0, 1},{0: -6, 1: 4})\n>>> print(test_format(orthogonal_vec2rep(A3, a3)))\n>>> print(test_format(orthogonal_vec2rep(A4, a4)))\n>>> print(test_format(orthogonal_vec2rep(A1, a1)))\n>>> print(test_format(orthogonal_vec2rep(A2, a2)))\n>>> print(test_format(orthogonal_vec2rep(A3, a3)))\n>>> print(test_format(orthogonal_vec2rep(A4, a4)))\n')], [('MaSN9MykLA2DGNoSBIJTBbyv3pwawi7L', 'Orthogonal change of basis', '>>> from mat import Mat\n>>> from vec import Vec \n>>> A1 = Mat(({0, 1, 2, 3}, {0, 1, 2, 3}), {(0, 1): 0, (1, 2): 0.0, (3, 2): 0.0, (0, 0): 5, (3, 3): 14.0, (3, 0): 0.0, (3, 1): 0.0, (1, 1): 2.0, (2, 1): 0.0, (0, 2): 0, (2, 0): 0.0, (1, 3): 0.0, (2, 3): 0.0, (2, 2): 9.0, (1, 0): 0.0, (0, 3): 0})\n>>> B1 = Mat(({0, 1, 2, 3}, {0, 1, 2, 3}), {(0, 1): 0, (1, 2): 0, (3, 2): 0, (0, 0): 0, (3, 3): 0, (3, 0): 0, (3, 1): 8, (1, 1): 0, (2, 1): 0, (0, 2): 5, (2, 0): 0, (1, 3): 0, (2, 3): 8, (2, 2): 0, (1, 0): 1, (0, 3): 0})\n>>> a1 = Vec({0, 1, 2, 3},{0: 12, 1: 9, 2: 6, 3: 3})\n>>> print(test_format(orthogonal_change_of_basis(A1, B1, a1)))\n>>> A2 = Mat(({0, 1, 2, 3}, {0, 1, 2, 3}), {(0, 1): 0, (1, 2): 0, (3, 2): 0, (0, 0): 0, (3, 3): 0, (3, 0): 5, (3, 1): 0, (1, 1): 2, (2, 1): 0, (0, 2): 0, (2, 0): 0, (1, 3): 0, (2, 3): 0, (2, 2): 6, (1, 0): 0, (0, 3): 9})\n>>> B2 = Mat(({0, 1, 2, 3}, {0, 1, 2, 3}), {(0, 1): 0, (1, 2): 0, (3, 2): 0, (0, 0): 0, (3, 3): 0, (3, 0): 7, (3, 1): 0, (1, 1): 14, (2, 1): 0, (0, 2): 12, (2, 0): 0, (1, 3): 0, (2, 3): -2, (2, 2): 0, (1, 0): 0, (0, 3): 0})\n>>> a2 = Vec({0, 1, 2, 3},{0: -19, 1: 0, 2: 5, 3: -3})\n>>> print(test_format(orthogonal_change_of_basis(A2, B2, a2)))\n>>> A3 = Mat(({0, 1, 2, 3}, {0, 1, 2, 3}), {(0, 1): 0, (1, 2): 0, (3, 2): -17, (0, 0): -1, (3, 3): 0, (3, 0): 0, (3, 1): 0, (1, 1): 0, (2, 1): -12, (0, 2): 0, (2, 0): 0, (1, 3): -3, (2, 3): 0, (2, 2): 0, (1, 0): 0, (0, 3): 0})\n>>> B3 = Mat(({0, 1, 2, 3}, {0, 1, 2, 3}), {(0, 1): 0, (1, 2): 0, (3, 2): 0, (0, 0): 0, (3, 3): 0, (3, 0): -1, (3, 1): 0, (1, 1): 0, (2, 1): -12, (0, 2): -17, (2, 0): 0, (1, 3): -3, (2, 3): 0, (2, 2): 0, (1, 0): 0, (0, 3): 0})\n>>> a3 = Vec({0, 1, 2, 3},{0: 1, 1: 1, 2: 1, 3: 1})\n>>> print(test_format(orthogonal_change_of_basis(A3, B3, a3)))\n>>> A4 = Mat(({0, 1}, {0, 1}), {(0, 1): 2.0, (1, 0): -2, (0, 0): 2, (1, 1): 2.0})\n>>> B4 = Mat(({0, 1}, {0, 1}), {(0, 1): 0, (1, 0): 0, (0, 0): 1, (1, 1): 15})\n>>> a4 = Vec({0, 1},{0: -6, 1: 4})\n>>> print(test_format(orthogonal_change_of_basis(A4, B4, a4)))\n')], [('MaSN9MykLA2DGNoSNgTjG3jh3KymmGWJ', 'Orthonormal project-orthogonal', ">>> from mat import Mat\n>>> from vec import Vec\n>>> W1 = Mat(({0, 1, 2}, {0, 1, 2}), {(0, 1): 1, (1, 2): 0, (0, 0): 0, (2, 0): 0, (1, 0): -1, (2, 2): -1, (0, 2): 0, (2, 1): 0, (1, 1): 0})\n>>> b1 = Vec({0, 1, 2},{0: 7, 1: 1, 2: 9})\n>>> print(test_format(orthonormal_projection_orthogonal(W1, b1)))\n>>> W2 = Mat(({0, 1}, {0, 1, 2}), {(0, 1): 1, (1, 2): 0.6, (0, 0): 0, (1, 0): -0.8, (0, 2): 0, (1, 1): 0})\n>>> b2 = Vec({0, 1, 2},{0: 1, 1: 2, 2: 3})\n>>> print(test_format(orthonormal_projection_orthogonal(W2, b2)))\n>>> W3 = Mat(({'a','b'}, {'A','B','C','D'}), {('a','A'):1/2, ('a','B'):1/2, ('a','C'):1/2, ('a','D'):1/2,('b','A'):1/2,('b','B'):-1/2, ('b','C'):1/2, ('b','D'):-1/2})\n>>> b3 = Vec({'A','B','C','D'},{'A': 8, 'B': 2, 'C': 4, 'D':1})\n>>> print(test_format(orthonormal_projection_orthogonal(W3, b3)))\n")], [('MaSN9MykLA2DGNoSa014yMq4De4j7nDH', 'Orthonormalize(L)', '>>> from vecutil import *\n>>> v1 = list2vec([1,2,3,4])\n>>> v2 = list2vec([2,3,4,5])\n>>> print(test_format(orthonormalization.orthonormalize([v1, v2])))\n>>> v1 = list2vec([1,2,1])\n>>> v2 = list2vec([2,2,2])\n>>> print(test_format(orthonormalization.orthonormalize([v1, v2])))\n>>> v1 = list2vec([.2, .4, .1, .9])\n>>> v2 = list2vec([12, 144, 91, 0])\n>>> v3 = list2vec([1, 1, 1, 1])\n>>> v4 = list2vec([0, 12, 0, 0])\n>>> print(test_format(orthonormalization.orthonormalize([v1, v2, v3, v4])))\n')], [('MaSN9MykLA2DGNoSdNTHyL5yVSHDiBGN', 'aug_orthonormalize(L)', '>>> from vecutil import *\n>>> L = [list2vec(v) for v in [[4,3,1,2],[8,9,-5,-5],[10,1, -1, 5]]]\n>>> Qlist, Rlist = orthonormalization.aug_orthonormalize(L)\n>>> print(test_format(Qlist))\n>>> print(test_format(Rlist))\n>>> L = [list2vec(v) for v in [[4,5,34],[2345,234,5],[45,2,3]]]\n>>> Qlist, Rlist = orthonormalization.aug_orthonormalize(L)\n>>> print(test_format(Qlist))\n>>> print(test_format(Rlist))\n>>> L = [list2vec(v) for v in [[1,0,0,0],[0,1,2,4],[2,5,4,3],[1234,65,2,5]]]\n>>> Qlist, Rlist = orthonormalization.aug_orthonormalize(L)                                   \n>>> print(test_format(Qlist))\n>>> print(test_format(Rlist))\n')], [('MaSN9MykLA2DGNoSBEZnVgtCHzoUKvXs', 'Least Squares Problem, Part 1', '>>> print(test_format((least_squares_A1*x_hat_1-least_squares_b1)*(least_squares_A1*x_hat_1-least_squares_b1) <= 0.6))\n'), ('MaSN9MykLA2DGNoSlnpqyGEqsQiTYIwL', 'Least Squares Problem, Part 2', '>>> print(test_format((least_squares_A2*x_hat_2-least_squares_b2)*(least_squares_A2*x_hat_2-least_squares_b2) <= 0.41))\n')], [('MaSN9MykLA2DGNoSsYVGml9dYQ27mds0', 'QR Solve', '>>> from mat import Mat\n>>> from vec import Vec\n>>> from matutil import *\n>>> from vecutil import *\n>>> A = listlist2mat([[10,20],[10,2]])\n>>> b = list2vec([2,9])\n>>> print(test_format(QR_solve(A,b)))\n>>> A = listlist2mat([[1,9,10],[9,1,10],[7,13,21]])\n>>> b = list2vec([12,43,34])\n>>> print(test_format(QR_solve(A, b)))\n')]]
+source_files        = ['hw7.py'] * len(sum(groups,[]))
+
+try:
+    import hw7 as solution
+    test_vars = vars(solution).copy()
+except Exception as exc:
+    print(exc)
+    print("!! It seems like you have an error in your stencil file. Please fix before submitting.")
+    sys.exit(1)
+
+def find_lines(varname):
+    return list(filter(lambda l: varname in l, list(open("python_lab.py"))))
+
+def find_line(varname):
+    ls = find_lines(varname)
+    return ls[0] if len(ls) else None
+
+
+def use_comprehension(varname):
+    lines = find_lines(varname)
+    for line in lines:
+        try:
+            if "comprehension" in ast.dump(ast.parse(line)):
+                return True
+        except: pass
+    return False
+
+def double_comprehension(varname):
+    line = find_line(varname)
+    return ast.dump(ast.parse(line)).count("comprehension") == 2
+
+def line_contains_substr(varname, word):
+    lines = find_line(varname)
+    for line in lines:
+        if word in line:
+            return True
+    return False
+
+def test_format(obj, precision=6):
+    tf = lambda o: test_format(o, precision)
+    delimit = lambda o: ', '.join(o)
+    otype = type(obj)
+    if otype is str:
+        return "'%s'" % obj
+    elif otype is float or otype is int:
+        if otype is int:
+            obj = float(obj)
+        if -0.000001 < obj < 0.000001:
+            obj = 0.0
+        fstr = '%%.%df' % precision
+        return fstr % obj
+    elif otype is set:
+        if len(obj) == 0:
+            return 'set()'
+        return '{%s}' % delimit(sorted(map(tf, obj)))
+    elif otype is dict:
+        return '{%s}' % delimit(sorted(tf(k)+': '+tf(v) for k,v in obj.items()))
+    elif otype is list:
+        return '[%s]' % delimit(map(tf, obj))
+    elif otype is tuple:
+        return '(%s%s)' % (delimit(map(tf, obj)), ',' if len(obj) is 1 else '')
+    elif otype.__name__ in ['Vec','Mat']:
+        entries = tf({x:obj.f[x] for x in obj.f if tf(obj.f[x]) != tf(0)})
+        return '%s(%s, %s)' % (otype.__name__, test_format(obj.D), entries)
+    else:
+        return str(obj)
+
+
+
+def output(tests):
+    dtst = doctest.DocTestParser().get_doctest(tests, test_vars, 0, '<string>', 0)
+    runner = ModifiedDocTestRunner()
+    runner.run(dtst)
+    return runner.results
+
+test_vars['test_format'] = test_vars['tf'] = test_format
+test_vars['find_lines'] = find_lines
+test_vars['find_line'] = find_line
+test_vars['use_comprehension'] = use_comprehension
+test_vars['double_comprehension'] = double_comprehension
+test_vars['line_contains_substr'] = line_contains_substr
+
+base_url = '://class.coursera.org/%s/assignment/' % URL
+protocol = 'https'
+colorize = False
+verbose  = False
+
+class ModifiedDocTestRunner(doctest.DocTestRunner):
+    def __init__(self, *args, **kwargs):
+        self.results = []
+        return super(ModifiedDocTestRunner, self).__init__(*args, checker=OutputAccepter(), **kwargs)
+    
+    def report_success(self, out, test, example, got):
+        self.results.append(got)
+    
+    def report_unexpected_exception(self, out, test, example, exc_info):
+        exf = traceback.format_exception_only(exc_info[0], exc_info[1])[-1]
+        self.results.append(exf)
+
+class OutputAccepter(doctest.OutputChecker):
+    def check_output(self, want, got, optionflags):
+        return True
+
+def submit(parts_string, login, password):   
+    print('= Coding the Matrix Homework and Lab Submission')
+    
+    if not login:
+        login = login_prompt()
+    if not password:
+        password = password_prompt()
+    if not parts_string: 
+        parts_string = parts_prompt()
+
+    parts = parse_parts(parts_string)
+
+    if not all([parts, login, password]):
+        return
+
+    for sid, name, part_tests in parts:
+        sys.stdout.write('== Submitting "%s"' % name)
+
+        if 'DEV' in os.environ: sid += '-dev'
+
+        (login, ch, state, ch_aux) = get_challenge(login, sid)
+
+        if not all([login, ch, state]):
+            print('  !! Error: %s\n' % login)
+            return
+
+        # to stop Coursera's strip() from doing anything, we surround in parens
+        results  = output(part_tests)
+        prog_out = '(%s)' % ''.join(map(str.rstrip, results))
+        token    = challenge_response(login, password, ch)
+        src      = source(sid)
+
+        feedback = submit_solution(login, token, sid, prog_out, src, state, ch_aux)
+
+        if len(feedback.strip()) > 0:
+            if colorize:
+                good = 'incorrect' not in feedback.lower()
+                print(': \033[1;3%dm%s\033[0m' % (2 if good else 1, feedback.strip()))
+            else:
+                print(': %s' % feedback.strip())
+        
+        if verbose:
+            res_itr = iter(results)
+            for t in part_tests.split('\n'):
+                print(t)
+                if t[:3] == '>>>':
+                   sys.stdout.write(next(res_itr)) 
+            # print(part_tests)
+            # print(results)
+            # for t, r in zip(part_tests.split('\n>>>'), results):
+            #     sys.stdout.write('>>> %s\n%s' % (t, r))
+            sys.stdout.write('\n\n')
+
+
+def login_prompt():
+    return input('Login email address: ')
+
+
+def password_prompt():
+    return input("One-time password from the assignment page (NOT your own account's password): ")
+
+
+def parts_prompt():
+    print('These are the assignment parts that you can submit:')
+
+    for i, name in enumerate(part_friendly_names):
+        print('  %d) %s' % (i+1, name))
+
+    return input('\nWhich parts do you want to submit? (Ex: 1, 4-7): ')
+
+def parse_parts(string):
+    def extract_range(s):
+        s = s.split('-')
+        if len(s) == 1: return [int(s[0])]
+        else: return list(range(int(s[0]), 1+int(s[1])))
+    parts = map(extract_range, string.split(','))
+    flat_parts = sum(parts, [])
+    return sum(list(map(lambda p: groups[p-1], flat_parts)),[])
+
+def get_challenge(email, sid):
+    """Gets the challenge salt from the server. Returns (email,ch,state,ch_aux)."""
+    params = {'email_address': email, 'assignment_part_sid': sid, 'response_encoding': 'delim'}
+
+    challenge_url = '%s%schallenge' % (protocol, base_url)
+    data = urllib.parse.urlencode(params).encode('utf-8')
+    req  = urllib.request.Request(challenge_url, data)
+    resp = urllib.request.urlopen(req)
+    text = resp.readall().decode('utf-8').strip().split('|')
+
+    if len(text) != 9:
+        print('  !! %s' % '|'.join(text))
+        sys.exit(1)
+  
+    return tuple(text[x] for x in [2,4,6,8])
+
+
+def challenge_response(email, passwd, challenge):
+    return hashlib.sha1((challenge+passwd).encode('utf-8')).hexdigest()
+
+
+def submit_solution(email_address, ch_resp, sid, output, source, state, ch_aux):
+    b64ize = lambda s: str(base64.encodebytes(s.encode('utf-8')), 'ascii')
+
+    values = { 'assignment_part_sid' : sid
+             , 'email_address'       : email_address
+             , 'submission'          : b64ize(output) 
+             , 'submission_aux'      : b64ize(source)
+             , 'challenge_response'  : ch_resp
+             , 'state'               : state
+             }
+
+    submit_url = '%s%ssubmit' % (protocol, base_url)
+    data     = urllib.parse.urlencode(values).encode('utf-8')
+    req      = urllib.request.Request(submit_url, data)
+    response = urllib.request.urlopen(req)
+
+    return response.readall().decode('utf-8').strip()
+
+
+def source(sid):
+    src = ['# submit version: %s' % SUBMIT_VERSION]
+    for fn in set(source_files):
+        with open(fn) as source_f:
+            src.append(source_f.read())
+    return '\n\n'.join(src)
+
+
+if __name__ == '__main__':
+    import argparse
+    parser = argparse.ArgumentParser()
+    env = os.environ
+    helps = [ 'numbers or ranges of tasks to submit'
+            , 'the email address on your Coursera account'
+            , 'your ONE-TIME password'
+            , 'use ANSI color escape sequences'
+            , 'show the test\'s interaction with your code'
+            , 'use an encrypted connection to Coursera'
+            , 'use an unencrypted connection to Coursera'
+            ]
+    parser.add_argument('tasks',      default=env.get('COURSERA_TASKS'), nargs='*', help=helps[0])
+    parser.add_argument('--email',    default=env.get('COURSERA_EMAIL'),            help=helps[1])
+    parser.add_argument('--password', default=env.get('COURSERA_PASS'),             help=helps[2])
+    parser.add_argument('--colorize', default=False, action='store_true',           help=helps[3])
+    parser.add_argument('--verbose',  default=False, action='store_true',           help=helps[4])
+    group = parser.add_mutually_exclusive_group()
+    group.add_argument('--https', dest="protocol", const="https", action="store_const", help=helps[-2])
+    group.add_argument('--http',  dest="protocol", const="http",  action="store_const", help=helps[-1])
+    args = parser.parse_args()
+    if args.protocol: protocol = args.protocol
+    colorize = args.colorize
+    verbose = args.verbose
+    submit(','.join(args.tasks), args.email, args.password)
+
