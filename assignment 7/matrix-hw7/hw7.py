@@ -146,3 +146,58 @@ def QR_solve(A, b):
     x_hat = solve(R, transpose(Q) * b)
     return x_hat
 
+# from vecutil import *
+# from orthonormalization import *
+# import QR
+# from mat import Mat,transpose
+# from solver import solve
+# from vec import Vec
+# from math import sqrt
+# import matutil
+# from hw7 import *
+# vlist =[list2vec(x) for x in [[2, 4, 3, 5, 0], [4, -2, -5, 4, 0], [-8, 14, 21, -2, 0], [-1, -4,-4, 0, 0], [-2, -18, -19, -6, 0], [5, -3, 1, -5, 2]]]
+# print(basis(vlist))
+# v = [2, 4, 3, 5, 0]
+# v * v
+# Q = Mat(({0, 1}, {0, 1}), {(0, 1): 0, (1, 0): 0, (0, 0): 2, (1, 1): 2})
+# b = Vec({0, 1},{0: 4, 1: 2})
+# orthogonal_vec2rep(Q, b) == Vec({0, 1},{0: 8, 1: 4})
+# A = Mat(({0, 1, 2}, {0, 1, 2}), {(0, 1): 0, (1, 2): 0, (0, 0): 1, (2, 0): 0, (1, 0): 0, (2, 2): 1, (0, 2): 0, (2, 1): 0, (1, 1): 1})
+# B = Mat(({0, 1, 2}, {0, 1, 2}), {(0, 1): 0, (1, 2): 0, (0, 0): 2, (2, 0): 0, (1, 0): 0, (2, 2): 2, (0, 2): 0, (2, 1): 0, (1, 1): 2})
+# a = Vec({0, 1, 2},{0: 4, 1: 1, 2: 3})
+# orthogonal_change_of_basis(A, B, a) == Vec({0, 1, 2},{0: 8, 1: 2, 2: 6})
+# A2 = matutil.listlist2mat([[1/sqrt(2), 1/sqrt(2), 0], [1/sqrt(3), -1/sqrt(3), 1/sqrt(3)], [-1/sqrt(6), 1/sqrt(6), 2/sqrt(6)]])
+# B2 = matutil.listlist2mat([[1/sqrt(2), 1/sqrt(2), 0], [1/sqrt(3), -1/sqrt(3), 1/sqrt(3)], [-1/sqrt(6), 1/sqrt(6), 2/sqrt(6)]])
+# a2 = Vec({0, 1, 2}, {0: sqrt(2), 1: 1/sqrt(3), 2: 2/sqrt(6)})
+# orthogonal_change_of_basis(A2, B2, a2)
+# W = Mat(({0, 1}, {0, 1, 2}), {(0, 1): 0, (1, 2): 0, (0, 0): 1, (1, 0): 0, (0, 2): 0, (1, 1): 1})
+# b = Vec({0, 1, 2},{0: 3, 1: 1, 2: 4})
+# orthonormal_projection_orthogonal(W, b) == Vec({0, 1, 2},{0: 0, 1: 0, 2: 4})
+# L = [list2vec(v) for v in [[4,3,1,2],[8,9,-5,-5],[10,1,-1,5]]]
+# print(matutil.coldict2mat(L))
+# Qlist, Rlist = aug_orthonormalize(L)
+# print(matutil.coldict2mat(Qlist))
+# print(matutil.coldict2mat(Rlist))
+# # to solve prob 8, read lecture 8-8 early half
+# B = list2vec([10,8,6])
+# Q = matutil.listlist2mat([[0.8, -0.099],[0.6, 0.132],[0,0.986]])
+# R = matutil.listlist2mat([[10,2],[0,6.08]])
+# A = Q * R
+# c = transpose(Q) * B
+# x = solve(R, c)
+# x
+# B = list2vec([10,13,15])
+# Q = matutil.listlist2mat([[.424, .808],[.566, .115],[.707, -.577]])
+# R = matutil.listlist2mat([[7.07, 1.7],[0,.346]])
+# A = Q * R
+# c = transpose(Q) * B
+# x = solve(R, c)
+# x
+
+# domain = ({'a','b','c'},{'A','B'})
+# A = Mat(domain,{('a','A'):-1, ('a','B'):2,('b','A'):5, ('b','B'):3,('c','A'):1,('c','B'):-2})
+# Q, R = QR.factor(A)
+# b = Vec(domain[0], {'a': 1, 'b': -1})
+# x = QR_solve(A, b)
+# result = A.transpose()*(b-A*x)
+# result * result < 1E-10
