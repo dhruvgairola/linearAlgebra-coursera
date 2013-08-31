@@ -1,13 +1,15 @@
 # version code 1049
 # Please fill out this stencil and submit using the provided submission script.
 
-from orthogonalization import orthogonalize
+from orthogonalization import orthogonalize,project_orthogonal
 import orthonormalization
-from mat import Mat
+from mat import Mat,transpose
 from vec import Vec
-from vecutil import list2vec
-from matutil import listlist2mat
-
+from vecutil import list2vec, zero_vec
+from matutil import listlist2mat,mat2rowdict,mat2coldict
+from QR import factor
+from triangular import triangular_solve
+from solver import solve
 
 
 ## Problem 1
@@ -18,9 +20,10 @@ def basis(vlist):
     Output:
         - a list of linearly independent Vecs with equal span to vlist
     '''
-    pass
+    return [v for v in orthogonalize(vlist) if square_norm(v) > 1E-20]
 
-
+def square_norm(v):
+    return v * v
 
 ## Problem 2
 def subset_basis(vlist):
@@ -30,7 +33,7 @@ def subset_basis(vlist):
     Output:
         - linearly independent subset of vlist with the same span as vlist
     '''
-    pass
+    return [vlist[k] for k, v in enumerate(orthogonalize(vlist)) if square_norm(v) > 1E-20]
 
 
 
@@ -48,7 +51,7 @@ def orthogonal_vec2rep(Q, b):
         >>> orthogonal_vec2rep(Q, b) == Vec({0, 1},{0: 8, 1: 4})
         True
     '''
-    pass
+    return Q * b
 
 
 
@@ -68,7 +71,7 @@ def orthogonal_change_of_basis(A, B, a):
         >>> orthogonal_change_of_basis(A, B, a) == Vec({0, 1, 2},{0: 8, 1: 2, 2: 6})
         True
     '''
-    pass
+    return (a * A) * B
 
 
 
@@ -86,7 +89,7 @@ def orthonormal_projection_orthogonal(W, b):
         >>> orthonormal_projection_orthogonal(W, b) == Vec({0, 1, 2},{0: 0, 1: 0, 2: 4})
         True
     '''
-    pass
+    return project_orthogonal(b,mat2rowdict(W).values())
 
 
 
@@ -108,7 +111,7 @@ least_squares_Q1 = listlist2mat([[.8,-0.099],[.6, 0.132],[0,0.986]])
 least_squares_R1 = listlist2mat([[10,2],[0,6.08]]) 
 least_squares_b1 = list2vec([10, 8, 6])
 
-x_hat_1 = ...
+x_hat_1 = Vec({0, 1},{0: 1.0832236842105263, 1: 0.9838815789473685})
 
 
 least_squares_A2 = listlist2mat([[3, 1], [4, 1], [5, 1]])
@@ -116,7 +119,7 @@ least_squares_Q2 = listlist2mat([[.424, .808],[.566, .115],[.707, -.577]])
 least_squares_R2 = listlist2mat([[7.07, 1.7],[0,.346]])
 least_squares_b2 = list2vec([10,13,15])
 
-x_hat_2 = ...
+x_hat_2 = Vec({0, 1},{0: 2.5010988382075188, 1: 2.658959537572257})
 
 
 
@@ -138,5 +141,8 @@ def QR_solve(A, b):
         >>> result * result < 1E-10
         True
     '''
-    pass
+    Q, R = factor(A)
+    c = transpose(Q) * b
+    x_hat = solve(R, transpose(Q) * b)
+    return x_hat
 
